@@ -15,7 +15,8 @@
     <p id="result">Attempts display here </p>
 
     <script>
-        var correct = 0, wrong = 0;
+        var correct = 0;
+        wrong = 0;
         function processPhrase() {
 
             secretphrase = document.getElementById("secretphrase").value
@@ -23,12 +24,12 @@
             if (secretphrase == checkphrase) {
                 correct = correct + 1;
                 document.getElementById("result").innerHTML = "Correct count " + correct;
-                alert("access allowed");
+                alert("Access allowed");
             } else {
 
                 wrong = wrong + 1;
                 document.getElementById("result").innerHTML = "Wrong count " + wrong;
-                alert("access denied");
+                alert("Access denied");
             }
         }
     </script>
