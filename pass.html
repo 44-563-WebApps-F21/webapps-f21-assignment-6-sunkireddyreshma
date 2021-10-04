@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <title>javascript assignment</title>
-    <body>
+<title>javascript assignment</title>
+
+<body>
     <h1>Pass phrase by Sunkireddy Reshmareddy</h1>
     <form>
         <label for="secretphrase">Enter the secret phrase </label>
@@ -11,12 +12,16 @@
         <br>
         <input type="button" onclick="processPhrase()" value="Check the phrase">
     </form>
-
     <p id="result">Attempts display here </p>
+    <div class="container">
+        <img src="Indian_elephant.jpg" id="animals" class="img-fluid" alt="Indian elephant" width="200" height="200"
+            onclick="newImage(this)" />
+    </div>
 
     <script>
         var correct = 0;
         wrong = 0;
+
         function processPhrase() {
 
             secretphrase = document.getElementById("secretphrase").value
@@ -32,7 +37,31 @@
                 alert("Access denied");
             }
         }
+        var usingImage = 0;
+
+        function newImage(imag) {
+
+            switch (usingImage) {
+                case 0:
+                    document.getElementById("animals").src = "Indian_elephant.jpg"
+                    usingImage++;
+                    break;
+                case 1:
+                    document.getElementById("animals").src = "scorpion.jpg"
+                    usingImage++;
+                    break;
+                case 2:
+                    document.getElementById("animals").src = "kangaroo.jpg"
+                    usingImage++;
+                    break;
+                default:
+                    usingImage = 0;
+                    document.getElementById("animals").src = "Indian_elephant.jpg"
+
+            }
+        }
     </script>
-</head>
-    </body>
+    </head>
+</body>
+
 </html>
