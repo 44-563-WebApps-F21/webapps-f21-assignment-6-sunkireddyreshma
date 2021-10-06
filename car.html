@@ -5,20 +5,33 @@
 <h2>Sunkireddy Reshmareddy orders a car</h2>
 
 <form>
-    <input type="checkbox" id="cb1_electric" name="topping1"   value="electric" checked>
-    <label for="cb1_electric">I need electric</label></br>
+    <input type="checkbox" id="cb1_electric" name="electric"   value="electric" checked>
+    <label for="cb1_electric">electric</label></br>
 
-    <input type="checkbox" id="cb1_ac" name="topping2" value="ac" checked>
-    <label for="cb1_ac">I need ac</label></br>
+    <input type="checkbox" id="cb1_ac" name="ac" value="ac" checked>
+    <label for="cb1_ac">ac</label></br>
 
-    <input type="checkbox" id="cb1_gps" name="topping3"   value="gps" checked>
-    <label for="cb1_gps">what is gps</label></br>
+    <input type="checkbox" id="cb1_gps" name="gps"   value="gps" checked>
+    <label for="cb1_gps">gps</label></br>
 
     <input type="button" onclick="orderCar()" value="Order a car">
 </form>
 
 
+<p id="result">This text will be replaced </p>
+<form>
+
+    <label for="cb2_property">Enter a property </label>
+    <input type="text" id="cb2_property" name="property" value="color"> <br>
+
+    <label for="cb2_value">Enter a value </label>
+    <input type="text" id="cb2_value" name="value"> <br>
+
+    <input type="button" onclick="updateCar()" value="Update the car">
+</form>
+
 <p id="result_01">This text will be replaced </p>
+
 
 <script> 
 var my_car;
@@ -28,10 +41,21 @@ function orderCar(){
     electric = document.getElementById("cb1_electric").value
     ac = document.getElementById("cb1_ac").value
     gps = document.getElementById("cb1_gps").value
-    out = document.getElementById("result_01")
-    out.innerHTML = "True or False:"+ result_01;
+    my_car = "electric : " + electric + "  "+"ac:  " + ac +" " +"gps:  " + gps;
+
+            out = document.getElementById("result")
+
+            out.innerHTML = my_car
     
 }
+function updateCar() {
+            my_car = "";
+            out = document.getElementById("result_01")
+            property = document.getElementById("cb2_property").value
+            value = document.getElementById("cb2_value").value
+            my_car = property + ":" + value;
+            out.innerHTML = my_car
+        }
 </script>
 
 </body>
