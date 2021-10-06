@@ -23,12 +23,12 @@
 <script> 
 var my_car;
 function orderCar(){
-    my_car=" ";
+    my_car="";
     console.log("Getting form values")
     electric = document.getElementById("cb1_electric").value
     ac = document.getElementById("cb1_ac").value
     gps = document.getElementById("cb1_gps").value
-    my_car="electric:" +electric+" "+"ac:"+ac+" " +"gps:"+gps+" ";
+    my_car="electric:" +electric+" "+"ac:"+ac+" " +"gps:"+gps;
     out = document.getElementById("result_01")
     out.innerHTML = my_car;
     
