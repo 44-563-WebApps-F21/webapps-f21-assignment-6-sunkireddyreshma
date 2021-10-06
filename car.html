@@ -5,15 +5,15 @@
 <h2>Sunkireddy Reshmareddy orders a car</h2>
 
 <form>
-    <input type="checkbox" id="cb1_electric" name="electric"   value="electric" checked>
+    <input type="checkbox" id="cb1_electric" name="electric"   value="electric">
     <label for="cb1_electric">electric</label></br>
 
-    <input type="checkbox" id="cb1_ac" name="ac" value="ac" checked>
+    <input type="checkbox" id="cb1_ac" name="ac" value="ac" >
     <label for="cb1_ac">ac</label></br>
 
-    <input type="checkbox" id="cb1_gps" name="gps"   value="gps" checked>
+    <input type="checkbox" id="cb1_gps" name="gps"   value="gps" >
     <label for="cb1_gps">gps</label></br>
-
+    </div>
     <input type="button" onclick="orderCar()" value="Order a car">
 </form>
 
@@ -21,40 +21,44 @@
 <p id="result">This text will be replaced </p>
 <form>
 
-    <label for="cb2_property">Enter a property </label>
-    <input type="text" id="cb2_property" name="property" value="color"> <br>
+    <label for="property">Enter a property </label>
+    <input type="text" id="property" name="property" value="color"> <br>
 
-    <label for="cb2_value">Enter a value </label>
-    <input type="text" id="cb2_value" name="value"> <br>
+    <label for="value">Enter a value </label>
+    <input type="text" id="value" name="value"> <br>
 
     <input type="button" onclick="updateCar()" value="Update the car">
 </form>
-
-<p id="result_01">This text will be replaced </p>
-
-
 <script> 
 var my_car;
 function orderCar(){
-    my_car="";
-    console.log("Getting form values")
-    electric = document.getElementById("cb1_electric").value
-    ac = document.getElementById("cb1_ac").value
-    gps = document.getElementById("cb1_gps").value
-    my_car = "electric : " + electric + "  "+"ac:  " + ac +" " +"gps:  " + gps;
-
-            out = document.getElementById("result")
-
-            out.innerHTML = my_car
-    
+    my_car={}
+   if(document.getElementById("cb1_electric").checked==true){
+       my_car['electric']='true';
+   }else{
+       my_car['electric']='false';  
+     }
+     if(document.getElementById("cb1_ac").checked==true){
+       my_car['ac']='true';
+   }else{
+       my_car['ac']='false'; 
+   }
+   if(document.getElementById("cb1_gps").checked==true){
+       my_car['gps']='true';
+   }else{
+       my_car['gps']='false'; 
+   }
+   document.getElementById("result").innerHTML=JSON.stringify(my_car);
+   console.log(my_car);
 }
 function updateCar() {
-            my_car = "";
-            out = document.getElementById("result_01")
-            property = document.getElementById("cb2_property").value
-            value = document.getElementById("cb2_value").value
-            my_car = property + ":" + value;
-            out.innerHTML = my_car
+            
+            out = document.getElementById("result")
+            property = document.getElementById("property").value
+            value = document.getElementById("value").value
+             my_car["property"]=property;
+             my_car["value"]=value;
+            out.innerHTML = JSON.stringify(my_car);
         }
 </script>
 

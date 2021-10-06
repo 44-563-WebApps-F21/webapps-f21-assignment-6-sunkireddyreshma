@@ -5,16 +5,17 @@
     <h1>Sunkireddy Reshmareddy by computes</h1>
 <form>
     <label for="form1_base">Enter a base</label>
-    <input type ="number" id="form1_base" name="form1_base" min=10 max=50 step=2 value=30> <br>
+    <input type ="number" id="form1_base" name="form1_base" min=10  value=10> <br>
 
     <label for="form1_exponent">Enter an exponent</label>
-    <input type ="number" id="form1_exponent" name="form1_exponent" min=2 autofocus> <br>
+    <input type ="number" id="form1_exponent" name="form1_exponent" min=2 autofocus value=2> <br>
 
     <input type="button" onclick="powers()" value="Compute">
 </form>
 
 
-<p id="result"> </p>
+<p id="result">The results get replaced </p>
+
 <form>
     <input type="radio" id="rg1_plus" name="operation"onclick="processRadio()" value="plus">
     <label for="rg1_plus">+</label></br>
@@ -29,6 +30,7 @@
     <label for="rg1_divide">/</label></br>
 
 </form>
+<p id="result_01">The results get replaced</p>
 
 
 <script> 
@@ -37,8 +39,8 @@ function powers(){
     console.log("Getting form values")
     base = document.getElementById("form1_base").value
     exponent = document.getElementById("form1_exponent").value
-    confirmed = confirm("Are these the values? "+ base +" and "+ exponent )
-    for(let i=0;i<exponent;i++)
+
+    for(let i=1;i<=exponent;i++)
     {
         result=result+Math.pow(base,i)+" ";
     }
@@ -49,23 +51,23 @@ function powers(){
 }
 function processRadio() {
             let first = document.getElementById("form1_base").value;
-            let second = document.getElementById("form1_exponenet").value;
+            let second = document.getElementById("form1_exponent").value;
             plus = document.getElementById("rg1_plus").checked
             minus = document.getElementById("rg1_minus").checked
             times = document.getElementById("rg1_times").checked
             divide = document.getElementById("rg1_divide").checked
            
             if (plus) {
-                document.getElementById("arithmetic").innerHTML = (Number)(first) + (Number)(second)
+                document.getElementById("result_01").innerHTML = (Number)(first) + (Number)(second)
             }
             if (minus) {
-                document.getElementById("arithmetic").innerHTML = first - second
+                document.getElementById("result_01").innerHTML = first - second
             }
             if (times) {
-                document.getElementById("arithmetic").innerHTML = first * second
+                document.getElementById("result_01").innerHTML = first * second
             }
             if (divide) {
-                document.getElementById("arithmetic").innerHTML = first / second
+                document.getElementById("result_01").innerHTML = first / second
             }
         }
 </script>
