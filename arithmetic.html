@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>Arithmetic page</title>
+<body>
+    <h1>Sunkireddy Reshmareddy by computes</h1>
+<form>
+    <label for="form1_base">Enter a base</label>
+    <input type ="number" id="form1_base" name="form1_base" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_exponent">Enter an exponent</label>
+    <input type ="number" id="form1_exponent" name="form1_exponent" min=2 autofocus> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function powers(){
+    var result=" ";
+    console.log("Getting form values")
+    base = document.getElementById("form1_base").value
+    exponent = document.getElementById("form1_exponent").value
+    confirmed = confirm("Are these the values? "+ base +" and "+ exponent )
+    for(let i=0;i<exponent;i++)
+    {
+        result=result+Math.pow(base,i)+" ";
+    }
+    console.log(result);
+    out = document.getElementById("result")
+    out.innerHTML = "Powers of the base are:"+ result;
+    
+}
+</script>
+
+</body>
+</html> 
