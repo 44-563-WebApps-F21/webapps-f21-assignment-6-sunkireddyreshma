@@ -15,6 +15,21 @@
 
 
 <p id="result">This text will be replaced </p>
+<form>
+    <input type="radio" id="rg1_plus" name="operation"onclick="processRadio()" value="plus">
+    <label for="rg1_plus">+</label></br>
+
+    <input type="radio" id="rg1_minus" name="operation" onclick="processRadio()" value="minus">
+    <label for="rg1_minus">-</label></br>
+
+    <input type="radio" id="rg1_times" name="operation" onclick="processRadio()" value="times">
+    <label for="rg1_times">*</label></br>
+
+    <input type="radio" id="rg1_divide" name="operation" onclick="processRadio()" value="divide">
+    <label for="rg1_divide">/</label></br>
+
+</form>
+
 
 <script> 
 
@@ -33,6 +48,27 @@ function powers(){
     out.innerHTML = "Powers of the base are:"+ result;
     
 }
+function processRadio() {
+            let first = document.getElementById("form1_base").value;
+            let second = document.getElementById("form1_exponenet").value;
+            plus = document.getElementById("rg1_plus").checked
+            minus = document.getElementById("rg1_minus").checked
+            times = document.getElementById("rg1_times").checked
+            divide = document.getElementById("rg1_divide").checked
+           
+            if (plus) {
+                document.getElementById("arithmetic").innerHTML = (Number)(first) + (Number)(second)
+            }
+            if (minus) {
+                document.getElementById("arithmetic").innerHTML = first - second
+            }
+            if (times) {
+                document.getElementById("arithmetic").innerHTML = first * second
+            }
+            if (divide) {
+                document.getElementById("arithmetic").innerHTML = first / second
+            }
+        }
 </script>
 
 </body>
