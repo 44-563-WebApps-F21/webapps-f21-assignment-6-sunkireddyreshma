@@ -33,6 +33,14 @@
             } else {
 
                 wrong = wrong + 1;
+                if (wrong == 3) {
+                    debugger
+                    alert("account locked");
+                    correct = 0;
+                }
+                else {
+                    alert("Access denied");
+                }
                 document.getElementById("result").innerHTML = "Wrong count " + wrong;
                 alert("Access denied");
             }
