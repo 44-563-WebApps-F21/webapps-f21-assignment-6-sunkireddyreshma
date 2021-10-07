@@ -30,19 +30,24 @@
     </div>
 
     <script>
-        var correct = 0;
-        wrong = 0;
+        let correct = 0;
+    let wrong = 0;
+function processPhrase (){
 
-        function processPhrase() {
-
-            secretphrase = document.getElementById("secretphrase").value
-            checkphrase = document.getElementById("checkphrase").value
-            if (secretphrase == checkphrase) {
-                correct = correct + 1;
-                document.getElementById("result").innerHTML = "Correct count " + correct;
-                alert("Access allowed");
-            } else {
-                wrong=wrong+1;
+    pwd = document.getElementById("password1").value;
+    check = document.getElementById("phraseCheck").value;
+        out = document.getElementById("result");
+    if(pwd==check)
+    {
+        correct=correct+1;
+        
+        alert("Access allowed. "  );
+        out.innerHTML = "Correct: "+correct;
+        
+    }
+    else
+    {
+        wrong=wrong+1;
         alert("Access denied. ");
         out.innerHTML = "Wrong: "+wrong;
 
@@ -56,9 +61,7 @@
     {
         alert("account locked");
     }
-
-              
-        }
+}
         var usingImage = 0;
 
         function newImage(imag) {
